@@ -1,8 +1,6 @@
-# Getting Started with Create React App
+# EcoPortal Question 8
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). With the purpose of answering the following question for a technical interview:
-
-Write a web application in the framework of your choice (React, Vue, AngularJS, Angular, ...) that:
+Question: Write a web application in the framework of your choice (React, Vue, AngularJS, Angular, ...) that:
 
 Reads in raw CSV data from a server
 CSV data can be found at: https://raw.githubusercontent.com/ecoPortal/dev-test/master/data.txt
@@ -13,7 +11,6 @@ Example output:
   - Two
     - Four
   - Three
-
 
 ## Available Scripts
 
