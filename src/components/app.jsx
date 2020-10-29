@@ -14,12 +14,23 @@ export default class App extends Component {
           This web app reads a CSV file from a remote location, parses the data
           and then orders the data in a hierarchy
         </p>
-        <p>View the results in the console</p>
+        <p>
+          The raw JSON output will be shown below. To more easily navigate the
+          results you can also view them in the console
+        </p>
         <button onClick={this.handleClick}>Read ecoPortal data.txt</button>
+        <div>
+          <div>
+            <pre>{JSON.stringify(this.state.results, null, 2)}</pre>
+          </div>
+        </div>
       </React.Fragment>
     );
   }
 
+  /**
+   * On click reads the remote document, generates the ordered hierarchy, and prints the results/sets the state
+   */
   handleClick = () => {
     readRemoteFile(
       "https://raw.githubusercontent.com/ecoPortal/dev-test/master/data.txt",
@@ -38,6 +49,9 @@ export default class App extends Component {
   };
 }
 
+/**
+ * Maps the results from read CSV into a workable object
+ */
 function generateUserList(results) {
   return results.map((data) => ({
     id: data[0],
@@ -47,6 +61,9 @@ function generateUserList(results) {
   }));
 }
 
+/**
+ * Recursively generates a hierarchy of users and their children based on the parent ids
+ */
 function orderHierarchy(userList, parentId) {
   var results = [];
 
